@@ -1,0 +1,14 @@
+namespace: JaybirdOOo
+output:
+  file_path: ./Fluid-Attacks-Results.csv
+  format: CSV
+working_dir: .
+sast:
+  include:
+    - glob(source/JaybirdOOo/service/*.py)
+    - glob(source/JaybirdOOo/service/pythonpath/jaybird/*)
+sca:
+  include:
+    - .
+language: EN
+strict: true

@@ -1,0 +1,12 @@
+#ifndef __io_github_prrvchr_jaybirdooo_idl__
+#define __io_github_prrvchr_jaybirdooo_idl__
+
+#include <io/github/prrvchr/XJaybirdOOo.idl>
+module io { module github { module prrvchr { 	
+
+	service JaybirdOOo : io::github::prrvchr::XJaybirdOOo {
+
+	};
+
+ }; }; };
+#endif

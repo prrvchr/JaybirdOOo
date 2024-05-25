@@ -1,0 +1,1 @@
+The Embedded Firebird driver installable as an extension.
