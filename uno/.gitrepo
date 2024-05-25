@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/prrvchr/uno.git
+	branch = main
+	commit = 849cebeb67af621c0272bc0d2729b8e0e373ad6f
+	parent = e32b537ceb5b79075795e977591f4f1cf6fc7fde
+	method = merge
+	cmdver = 0.4.3
