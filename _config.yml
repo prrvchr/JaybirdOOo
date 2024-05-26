@@ -5,7 +5,7 @@ plugins:
   - jekyll-seo-tag
   - jemoji
 favicon: true
-logo: /img/jaybird.svg
+logo: /img/jaybird.png
 email: prrvchr@gmail.com
 title: JaybirdOOo
 blank_title: true

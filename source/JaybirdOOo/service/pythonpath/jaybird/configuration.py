@@ -1,5 +1,5 @@
 #!
-# -*- coding: utf-8 -*-
+# -*- coding: utf_8 -*-
 
 """
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -27,81 +27,27 @@
 ╚════════════════════════════════════════════════════════════════════════════════════╝
 """
 
-import uno
-import unohelper
+# General configuration
+g_catalog = 'jaybird'
+g_dbname = 'Jaybird'
+g_extension = '%sOOo' % g_dbname
+g_identifier = 'io.github.prrvchr.%s' % g_extension
+g_resource = 'resource'
+g_basename = 'Driver'
+g_defaultlog = '%sLogger' % g_dbname
+g_errorlog = '%sError' % g_dbname
 
-from com.sun.star.ui.dialogs.ExecutableDialogResults import OK
+# DataBase configuration
+g_protocol = 'xdbc:firebird:embedded:'
+g_url = 'sdbc:embedded:jaybird'
+g_user = 'admin'
+g_options = ''
+g_create = '?createDatabaseIfNotExist=true'
+g_exist = ''
+g_path = True;
+g_sep = '/'
 
-from com.sun.star.logging.LogLevel import INFO
-from com.sun.star.logging.LogLevel import SEVERE
+# LibreOffice configuration
+g_lover = '5.0'
 
-from .optionsmodel import OptionsModel
-from .optionsview import OptionsView
-from .optionshandler import OptionsListener
-from .optionshandler import Tab1Handler
-from .optionshandler import Tab2Handler
-
-from ..unotool import createService
-from ..unotool import getFilePicker
-from ..unotool import getSimpleFile
-from ..unotool import getUrl
-
-from ..logger import LogManager
-
-from ..configuration import g_extension
-from ..configuration import g_identifier
-from ..configuration import g_defaultlog
-
-import os
-import sys
-import traceback
-
-
-class OptionsManager(unohelper.Base):
-    def __init__(self, ctx, window, url=None):
-        self._ctx = ctx
-        self._disposed = False
-        self._disabled = False
-        self._model = OptionsModel(ctx, url)
-        window.addEventListener(OptionsListener(self))
-        self._view = OptionsView(window, *self._model.getViewData())
-        self._logmanager = LogManager(ctx, window.getPeer(), 'requirements.txt', g_identifier, g_defaultlog)
-
-    def dispose(self):
-        self._logmanager.dispose()
-        self._disposed = True
-
-    # TODO: One shot disabler handler
-    def isHandlerEnabled(self):
-        if self._disabled:
-            self._disabled = False
-            return False
-        return True
-
-# OptionsManager setter methods
-    def updateView(self, versions):
-        with self._lock:
-            self.updateVersion(versions)
-
-    def updateVersion(self, versions):
-        with self._lock:
-            if not self._disposed:
-                protocol = self._view.getSelectedProtocol()
-                if protocol in versions:
-                    self._view.setVersion(versions[protocol])
-
-    def saveSetting(self):
-        self._logmanager.saveSetting()
-        if self._model.saveSetting() and self._model.isUpdated():
-            self._view.disableDriverLevel()
-
-    def loadSetting(self):
-        self._logmanager.loadSetting()
-        self._view.initView(*self._model.loadSetting())
-
-    def setDriverService(self, driver):
-        self._view.setConnectionLevel(*self._model.setDriverService(driver))
-
-    def setConnectionService(self, level):
-        self._model.setConnectionService(level)
 

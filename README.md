@@ -38,6 +38,8 @@
 This extension allows you to use [Firebird][9] in embedded mode, making the database portable (a single odb file).  
 It allows you to take advantage of the [ACID][10] properties of the underlying [Firebird][11] database.
 
+**This implementation uses Jaybird 6.0.0 which is an unfinalized version. Please use with caution.**
+
 Being free software I encourage you:
 - To duplicate its [source code][12].
 - To make changes, corrections, improvements.
@@ -139,8 +141,9 @@ ___
 
 ### What has been done for version 1.0.0:
 
-- This version is based on [fix #154989][32] available since LibreOffice 24.2.x. It can therefore work with other extensions offering integrated database services.
-- Now JaybirdOOo requires LibreOffice 24.2.x minimum and will load for the url: `sdbc:embedded:jaybird`.
+- First of all I would like to thank [rotteveel][32] for [improvement #629][33] which made it possible to publish this extension.
+- This version is based on [fix #154989][34] available since LibreOffice 24.2.x. It can therefore work with other extensions offering integrated database services.
+- JaybirdOOo requires LibreOffice 24.2.x minimum and will load for the url: `sdbc:embedded:jaybird`.
 
 ### What remains to be done for version 1.0.0:
 
@@ -168,7 +171,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.0#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.0#right>
 [24]: <img/JaybirdOOo-1.png>
 [25]: <img/JaybirdOOo-2.png>
 [26]: <img/JaybirdOOo-3.png>
@@ -177,4 +180,6 @@ ___
 [29]: <https://github.com/prrvchr/JaybirdOOo/blob/main/uno/lib/uno/embedded/documenthandler.py>
 [30]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/util/XCloseListener.html>
 [31]: <http://www.openoffice.org/api/docs/common/ref/com/sun/star/document/XStorageChangeListener.html>
-[32]: <https://gerrit.libreoffice.org/c/core/+/154989>
+[32]: <https://github.com/mrotteveel>
+[33]: <https://github.com/FirebirdSQL/jaybird/issues/629>
+[34]: <https://gerrit.libreoffice.org/c/core/+/154989>
