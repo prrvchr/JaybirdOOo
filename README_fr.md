@@ -36,7 +36,7 @@
 **JaybirdOOo** fait partie d'une [Suite][6] d'extensions [LibreOffice][7] ~~et/ou [OpenOffice][8]~~ permettant de vous offrir des services inovants dans ces suites bureautique.  
 
 Cette extension vous permet d'utiliser la base de données [Firebird][9] en mode intégré, rendant la base de donnée portable (un seul fichier odb).  
-Elle permet de profiter des propriétés [ACID][10] de la base de données [H2 Database][11] sous jancente.
+Elle permet de profiter des propriétés [ACID][10] de la base de données [Firebird][11] sous jancente.
 
 **Cette implémentation utilise Jaybird 6.0.0 qui est une version non finalisée. Veuillez utiliser avec précaution.**
 
