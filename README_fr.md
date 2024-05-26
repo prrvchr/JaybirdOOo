@@ -72,7 +72,7 @@ Si nécessaire, renommez-le avant de l'installer.
 
 - [![jdbcDriverOOo logo][17]][18] Installer l'extension **[jdbcDriverOOo.oxt][19]** [![Version][20]][19]
 
-    Cette extension est nécessaire pour utiliser H2 Database avec toutes ses fonctionnalités.
+    Cette extension est nécessaire pour utiliser Firebird avec toutes ses fonctionnalités.
 
 - ![JaybirdOOo logo][21] Installer l'extension **[JaybirdOOo.oxt][22]** [![Version][23]][22]
 
@@ -142,7 +142,7 @@ ___
 ### Ce qui a été fait pour la version 1.0.0:
 
 - Tout d'abord je tiens à remercier [rotteveel][32] pour [l'amélioration #629][33] qui a permis de publier cette extension.
-- Cette version est basée sur la [correction #154989][34] disponible depuis LibreOffice 24.2.x. Elle peut donc fonctionner avec les autres extensions proposant des services de bases de données intégrées.
+- Cette extension est basée sur la [correction #154989][34] disponible depuis LibreOffice 24.2.x. Elle peut donc fonctionner avec les autres extensions proposant des services de bases de données intégrées.
 - JaybirdOOo nécessite donc LibreOffice 24.2.x minimum et se chargera pour l'url: `sdbc:embedded:jaybird`.
 
 ### Que reste-t-il à faire pour la version 1.0.0:
@@ -151,7 +151,7 @@ ___
 
 - Tout ce qui est bienvenu...
 
-[1]: </img/h2db.svg#collapse>
+[1]: </img/jaybird.svg#collapse>
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_fr>
