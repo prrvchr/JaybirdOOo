@@ -57,11 +57,7 @@ It must therefore meet the [requirement of the jdbcDriverOOo extension][14].
 
 **Only LibreOffice 24.2.x or higher is supported.**
 
-**On Linux and macOS the Python packages** used by the extension, if already installed, may come from the system and therefore **may not be up to date**.  
-To ensure that your Python packages are up to date it is recommended to use the **System Info** option in the extension Options accessible by:  
-**Tools -> Options -> Base drivers -> Embedded SQLite Driver -> View log -> System Info**  
-If outdated packages appear, you can update them with the command:  
-`pip install --upgrade <package-name>`
+**You need [Java version 17][15] or higher minimum.**
 
 ___
 
@@ -165,6 +161,7 @@ ___
 [12]: <https://github.com/prrvchr/JaybirdOOo/>
 [13]: <https://github.com/prrvchr/JaybirdOOo/issues/new>
 [14]: <https://prrvchr.github.io/jdbcDriverOOo/#requirement>
+[15]: <https://adoptium.net/temurin/archive/?version=17>
 [17]: <https://prrvchr.github.io/jdbcDriverOOo/img/jdbcDriverOOo.svg#middle>
 [18]: <https://prrvchr.github.io/jdbcDriverOOo>
 [19]: <https://github.com/prrvchr/jdbcDriverOOo/releases/latest/download/jdbcDriverOOo.oxt>

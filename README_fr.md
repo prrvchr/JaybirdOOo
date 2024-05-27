@@ -55,13 +55,9 @@ ___
 L'extension JaybirdOOo utilise l'extension jdbcDriverOOo pour fonctionner.  
 Elle doit donc répondre aux [prérequis de l'extension jdbcDriverOOo][14].
 
-**Depuis la version 1.1.0, seul LibreOffice 24.2.x ou supérieur est pris en charge.**  
+**Seul LibreOffice 24.2.x ou supérieur est pris en charge.**
 
-**Sous Linux et macOS les paquets Python** utilisés par l'extension, peuvent s'il sont déja installé provenir du système et donc, **peuvent ne pas être à jour**.  
-Afin de s'assurer que vos paquets Python sont à jour il est recommandé d'utiliser l'option **Info système** dans les Options de l'extension accessible par:  
-**Outils -> Options -> Pilotes Base -> Pilote SQLite intégré -> Voir journal -> Info système**  
-Si des paquets obsolètes apparaissent, vous pouvez les mettre à jour avec la commande:  
-`pip install --upgrade <package-name>`
+**Vous avez besoin de [Java version 17][15] ou supérieure au minimum.**
 
 ___
 
@@ -165,6 +161,7 @@ ___
 [12]: <https://github.com/prrvchr/JaybirdOOo/>
 [13]: <https://github.com/prrvchr/JaybirdOOo/issues/new>
 [14]: <https://prrvchr.github.io/jdbcDriverOOo/README_fr#pr%C3%A9requis>
+[15]: <https://adoptium.net/fr/temurin/archive/?version=17>
 [17]: <https://prrvchr.github.io/jdbcDriverOOo/img/jdbcDriverOOo.svg#middle>
 [18]: <https://prrvchr.github.io/jdbcDriverOOo/README_fr>
 [19]: <https://github.com/prrvchr/jdbcDriverOOo/releases/latest/download/jdbcDriverOOo.oxt>
