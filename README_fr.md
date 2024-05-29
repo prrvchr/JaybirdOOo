@@ -57,7 +57,7 @@ Elle doit donc répondre aux [prérequis de l'extension jdbcDriverOOo][14].
 
 **Seul LibreOffice 24.2.x ou supérieur est pris en charge.**
 
-**Vous avez besoin de [Java version 17][15] ou supérieure au minimum.**
+L'utilisation de Jaybird 6.0.0 nécessite un JRE **[Java version 17][15] ou supérieure.**
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 - Tout d'abord je tiens à remercier [rotteveel][32] pour [l'amélioration #629][33] qui a permis de publier cette extension.
 - Cette extension est basée sur la [correction #154989][34] disponible depuis LibreOffice 24.2.x. Elle peut donc fonctionner avec les autres extensions proposant des services de bases de données intégrées.
-- JaybirdOOo nécessite donc LibreOffice 24.2.x minimum et se chargera pour l'url: `sdbc:embedded:jaybird`.
+- JaybirdOOo nécessite **LibreOffice 24.2.x** et **Java 17** au minimum. Il se chargera pour l'url: `sdbc:embedded:jaybird`.
 
 ### Que reste-t-il à faire pour la version 1.0.0:
 

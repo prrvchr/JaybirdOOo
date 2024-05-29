@@ -46,8 +46,9 @@ g_create = '?createDatabaseIfNotExist=true'
 g_exist = ''
 g_path = True;
 g_sep = '/'
+g_driver = 'driver'
 
 # LibreOffice configuration
-g_lover = '5.0'
+g_lover = '24.2'
 
 
