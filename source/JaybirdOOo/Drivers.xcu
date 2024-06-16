@@ -61,7 +61,7 @@
                 </node>
                 <node oor:name="AutoRetrievingStatement" oor:op="replace">
                     <prop oor:name="Value" oor:type="xs:string">
-                        <value>SELECT * FROM {0} WHERE {4}</value>
+                        <value>SELECT * FROM %s WHERE %s</value>
                     </prop>
                 </node>
                 <node oor:name="IgnoreDriverPrivileges" oor:op="replace">
