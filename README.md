@@ -29,7 +29,7 @@
 
 **The use of this software subjects you to our [Terms Of Use][4].**
 
-# version [1.0.0][5]
+# version [1.0.1][5]
 
 ## Introduction:
 
@@ -141,7 +141,11 @@ ___
 - This extension is based on [fix #154989][34] available since LibreOffice 24.2.x. It can therefore work with other extensions offering integrated database services.
 - JaybirdOOo requires **LibreOffice 24.2.x** and **Java 17** minimum. It will load for the url: `sdbc:embedded:jaybird`.
 
-### What remains to be done for version 1.0.0:
+### What has been done for version 1.0.1:
+
+- Support for the new version 1.4.0 of jdbcDriverOOo.
+
+### What remains to be done for version 1.0.1:
 
 - Add new language for internationalization...
 
@@ -168,7 +172,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.0#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.1#right>
 [24]: <img/JaybirdOOo-1.png>
 [25]: <img/JaybirdOOo-2.png>
 [26]: <img/JaybirdOOo-3.png>
