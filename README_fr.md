@@ -144,6 +144,7 @@ ___
 ### Ce qui a été fait pour la version 1.0.1:
 
 - Support de la nouvelle version 1.4.0 de jdbcDriverOOo.
+- L'utilisation de fichiers odb créés avec une version précédente de JaybirdOOo, nécessite de modifier le paramètre : `Requête des valeurs générées` accessible par le menu : **Edition -> Base de données -> Paramètres avancés... -> Valeurs générées** par la valeur : `SELECT * FROM %s WHERE %s`.
 
 ### Que reste-t-il à faire pour la version 1.0.1:
 
