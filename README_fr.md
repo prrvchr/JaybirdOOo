@@ -29,7 +29,7 @@
 
 **L'utilisation de ce logiciel vous soumet à nos [Conditions d'utilisation][4].**
 
-# version [1.0.1][5]
+# version [1.0.2][5]
 
 ## Introduction:
 
@@ -146,7 +146,13 @@ ___
 - Support de la nouvelle version 1.4.0 de jdbcDriverOOo.
 - L'utilisation de fichiers odb créés avec une version précédente de JaybirdOOo, nécessite de modifier le paramètre : `Requête des valeurs générées` accessible par le menu : **Edition -> Base de données -> Paramètres avancés... -> Valeurs générées** par la valeur : `SELECT * FROM %s WHERE %s`.
 
-### Que reste-t-il à faire pour la version 1.0.1:
+### Ce qui a été fait pour la version 1.0.2:
+
+- Mise à jour du paquet [Python packaging][35] vers la version 24.1.
+- Mise à jour du paquet [Python setuptools][36] vers la version 72.1.0.
+- L'extension vous demandera d'installer l'extensions jdbcDriverOOo en version 1.4.2 minimum.
+
+### Que reste-t-il à faire pour la version 1.0.2:
 
 - Ajouter de nouvelles langue pour l'internationalisation...
 
@@ -173,7 +179,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.1#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.2#right>
 [24]: <img/JaybirdOOo-1_fr.png>
 [25]: <img/JaybirdOOo-2_fr.png>
 [26]: <img/JaybirdOOo-3_fr.png>
@@ -185,3 +191,5 @@ ___
 [32]: <https://github.com/mrotteveel>
 [33]: <https://github.com/FirebirdSQL/jaybird/issues/629>
 [34]: <https://gerrit.libreoffice.org/c/core/+/154989>
+[35]: <https://pypi.org/project/packaging/>
+[36]: <https://pypi.org/project/setuptools/>
