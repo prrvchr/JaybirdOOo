@@ -29,7 +29,7 @@
 
 **The use of this software subjects you to our [Terms Of Use][4].**
 
-# version [1.0.2][5]
+# version [1.0.3][5]
 
 ## Introduction:
 
@@ -125,7 +125,9 @@ ___
 
 ## Has been tested with:
 
-* LibreOffice 24.2.1.2 - Ubuntu 22.04
+* LibreOffice 24.2.1.2 (x86_64)- Windows 10
+
+* LibreOffice 24.2.1.2 - Lubuntu 22.04
 
 I encourage you in case of problem :confused:  
 to create an [issue][13]  
@@ -152,7 +154,12 @@ ___
 - Updated the [Python setuptools][36] package to version 72.1.0.
 - The extension will ask you to install the jdbcDriverOOo extension in versions 1.4.2 minimum.
 
-### What remains to be done for version 1.0.2:
+### What has been done for version 1.0.3:
+
+- Updated the [Python setuptools][36] package to version 73.0.1.
+- Logging accessible in extension options now displays correctly on Windows.
+
+### What remains to be done for version 1.0.3:
 
 - Add new language for internationalization...
 
@@ -179,7 +186,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.2#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.3#right>
 [24]: <img/JaybirdOOo-1.png>
 [25]: <img/JaybirdOOo-2.png>
 [26]: <img/JaybirdOOo-3.png>

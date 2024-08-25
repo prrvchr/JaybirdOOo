@@ -7,6 +7,7 @@ plugins:
 favicon: true
 logo: /img/jaybird.svg
 email: prrvchr@gmail.com
+google_analytics: G-YG4NJNDW9K
 title: JaybirdOOo
 blank_title: true
 description: The latest version of Firebird database in a single odb file.
