@@ -129,6 +129,8 @@ ___
 
 * LibreOffice 24.2.1.2 - Lubuntu 22.04
 
+* LibreOffice 24.8.0.3 (x86_64) - Windows 10(x64) - Python version 3.9.19 (under Lubuntu 22.04 / VirtualBox 6.1.38)
+
 I encourage you in case of problem :confused:  
 to create an [issue][13]  
 I will try to solve it :smile:
@@ -158,6 +160,9 @@ ___
 
 - Updated the [Python setuptools][36] package to version 73.0.1.
 - Logging accessible in extension options now displays correctly on Windows.
+- The extension options are now accessible via: **Tools -> Options... -> LibreOffice Base -> Embedded HsqlDB Driver**
+- Changes to extension options that require a restart of LibreOffice will result in a message being displayed.
+- Support for LibreOffice version 24.8.x.
 
 ### What remains to be done for version 1.0.3:
 

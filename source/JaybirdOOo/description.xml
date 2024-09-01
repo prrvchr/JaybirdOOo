@@ -53,8 +53,8 @@
         <name lang="fr-FR">JaybirdOOo</name>
     </display-name>
     <icon>
-        <default xlink:href="JaybirdOOo/JaybirdOOo.png"/>
-        <high-contrast xlink:href="JaybirdOOo/JaybirdOOo.png"/>
+        <default xlink:href="img/JaybirdOOo.png"/>
+        <high-contrast xlink:href="img/JaybirdOOo.png"/>
     </icon>
     <extension-description>
         <src xlink:href="description/desc_en.txt" lang="en-US"/>
