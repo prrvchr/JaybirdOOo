@@ -160,8 +160,8 @@ ___
 
 - Mise à jour du paquet [Python setuptools][36] vers la version 73.0.1.
 - La journalisation accessible dans les options de l’extension s’affiche désormais correctement sous Windows.
-- Les options de l'extension sont désormais accessibles via: **Outils -> Options... -> LibreOffice Base -> Pilote HsqlDB intégré**
-- Les modifications apportées aux options d'extension, qui nécessitent un redémarrage de LibreOffice, entraîneront l'affichage d'un message.
+- Les options de l'extension sont désormais accessibles via: **Outils -> Options... -> LibreOffice Base -> Pilote Jaybird intégré**
+- Les modifications apportées aux options de l'extension, qui nécessitent un redémarrage de LibreOffice, entraîneront l'affichage d'un message.
 - Support de LibreOffice version 24.8.x.
 
 ### Que reste-t-il à faire pour la version 1.0.3:

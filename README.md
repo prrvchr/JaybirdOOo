@@ -160,7 +160,7 @@ ___
 
 - Updated the [Python setuptools][36] package to version 73.0.1.
 - Logging accessible in extension options now displays correctly on Windows.
-- The extension options are now accessible via: **Tools -> Options... -> LibreOffice Base -> Embedded HsqlDB Driver**
+- The extension options are now accessible via: **Tools -> Options... -> LibreOffice Base -> Embedded Jaybird Driver**
 - Changes to extension options that require a restart of LibreOffice will result in a message being displayed.
 - Support for LibreOffice version 24.8.x.
 
