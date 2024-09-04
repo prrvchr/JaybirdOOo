@@ -35,8 +35,8 @@
                 <value>io.github.prrvchr.JaybirdOOo.Driver</value>
             </prop>
             <prop oor:name="DriverTypeDisplayName" oor:type="xs:string">
-                <value xml:lang="en-US">Embedded Firebird Driver</value>
-                <value xml:lang="fr-FR">Pilote Firebird intégré</value>
+                <value xml:lang="en-US">Embedded Jaybird Driver</value>
+                <value xml:lang="fr-FR">Pilote Jaybird intégré</value>
             </prop>
             <node oor:name="Properties">
                 <node oor:name="TypeInfoSettings" oor:op="replace">

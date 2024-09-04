@@ -168,6 +168,7 @@ ___
 
 - Requires the latest version of **jdbcDriverOOo 1.4.4**.
 - In the extension options it is possible to define the options: **View system tables**, **Use bookmarks** and **Force SQL mode** which will be specific to this driver.
+- In order not to conflict with LibreOffice's embedded Firebird driver, the driver has been renamed to **Embedded Jaybird Driver**.
 
 ### What remains to be done for version 1.0.4:
 

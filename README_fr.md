@@ -168,6 +168,7 @@ ___
 
 - Nécessite la dernière version de **jdbcDriverOOo 1.4.4**.
 - Dans les options de l'extension il est possible de définir les options: **Afficher les tables système**, **Utiliser les signets** et **Forcer le mode SQL** qui seront spécifiques à ce pilote.
+- Afin de ne pas entrer en conflit avec le pilote Firebird intégré à LibreOffice, le pilote a été renommé en **Pilote Jaybird intégré**.
 
 ### Que reste-t-il à faire pour la version 1.0.4:
 
