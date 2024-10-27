@@ -29,7 +29,7 @@
 
 **The use of this software subjects you to our [Terms Of Use][4].**
 
-# version [1.0.4][5]
+# version [1.0.5][5]
 
 ## Introduction:
 
@@ -170,7 +170,12 @@ ___
 - In the extension options it is possible to define the options: **View system tables**, **Use bookmarks** and **Force SQL mode** which will be specific to this driver.
 - In order not to conflict with LibreOffice's embedded Firebird driver, the driver has been renamed to **Embedded Jaybird Driver**.
 
-### What remains to be done for version 1.0.4:
+### What has been done for version 1.0.5:
+
+- The extension will ask you to install jdbcDriverOOo extension in versions 1.4.6 minimum.
+- Modification of the extension options accessible via: **Tools -> Options... -> LibreOffice Base -> Embedded Jaybird Driver** in order to comply with the new graphic charter.
+
+### What remains to be done for version 1.0.5:
 
 - Add new language for internationalization...
 
@@ -180,7 +185,7 @@ ___
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/README_fr>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_en>
-[5]: <https://prrvchr.github.io/JaybirdOOo#historical>
+[5]: <https://prrvchr.github.io/JaybirdOOo#what-has-been-done-for-version-105>
 [6]: <https://prrvchr.github.io/>
 [7]: <https://www.libreoffice.org/download/download/>
 [8]: <https://www.openoffice.org/download/index.html>
@@ -197,7 +202,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.4#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.5#right>
 [24]: <img/JaybirdOOo-1.png>
 [25]: <img/JaybirdOOo-2.png>
 [26]: <img/JaybirdOOo-3.png>

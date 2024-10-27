@@ -29,7 +29,7 @@
 
 **L'utilisation de ce logiciel vous soumet à nos [Conditions d'utilisation][4].**
 
-# version [1.0.4][5]
+# version [1.0.5][5]
 
 ## Introduction:
 
@@ -170,7 +170,12 @@ ___
 - Dans les options de l'extension il est possible de définir les options: **Afficher les tables système**, **Utiliser les signets** et **Forcer le mode SQL** qui seront spécifiques à ce pilote.
 - Afin de ne pas entrer en conflit avec le pilote Firebird intégré à LibreOffice, le pilote a été renommé en **Pilote Jaybird intégré**.
 
-### Que reste-t-il à faire pour la version 1.0.4:
+### Ce qui a été fait pour la version 1.0.5:
+
+- L'extension vous demandera d'installer l'extensions jdbcDriverOOo en version 1.4.6 minimum.
+- Modification des options de l'extension accessibles via : **Outils -> Options... -> LibreOffice Base -> Pilote Jaybird intégré** afin de respecter la nouvelle charte graphique.
+
+### Que reste-t-il à faire pour la version 1.0.5:
 
 - Ajouter de nouvelles langue pour l'internationalisation...
 
@@ -180,7 +185,7 @@ ___
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_fr>
-[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#historique>
+[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-105>
 [6]: <https://prrvchr.github.io/README_fr>
 [7]: <https://fr.libreoffice.org/download/telecharger-libreoffice/>
 [8]: <https://www.openoffice.org/fr/Telecharger/>
@@ -197,7 +202,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.4#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.5#right>
 [24]: <img/JaybirdOOo-1_fr.png>
 [25]: <img/JaybirdOOo-2_fr.png>
 [26]: <img/JaybirdOOo-3_fr.png>
