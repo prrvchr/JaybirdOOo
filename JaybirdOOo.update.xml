@@ -2,7 +2,7 @@
 <!--
 ╔════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                    ║
-║   Copyright (c) 2020 https://prrvchr.github.io                                     ║
+║   Copyright (c) 2020-25 https://prrvchr.github.io                                  ║
 ║                                                                                    ║
 ║   Permission is hereby granted, free of charge, to any person obtaining            ║
 ║   a copy of this software and associated documentation files (the "Software"),     ║
@@ -28,7 +28,7 @@
   xmlns="http://openoffice.org/extensions/update/2006"
   xmlns:xlink="http://www.w3.org/1999/xlink">
     <identifier value="io.github.prrvchr.JaybirdOOo"/>
-    <version value="1.0.5"/>
+    <version value="1.1.0"/>
     <update-download>
         <src xlink:href="https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt"/>
     </update-download>
@@ -40,7 +40,7 @@
         <name xlink:href="https://prrvchr.github.io/JaybirdOOo/README_fr" lang="fr">JaybirdOOo</name>
     </publisher>
     <release-notes>
-        <src xlink:href="https://prrvchr.github.io/JaybirdOOo/#what-has-been-done-for-version-105" lang="en"/>
-        <src xlink:href="https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-105" lang="fr"/>
+        <src xlink:href="https://prrvchr.github.io/JaybirdOOo/#what-has-been-done-for-version-110" lang="en"/>
+        <src xlink:href="https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-110" lang="fr"/>
     </release-notes>
 </description>
