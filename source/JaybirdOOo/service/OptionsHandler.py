@@ -27,8 +27,9 @@
 ╚════════════════════════════════════════════════════════════════════════════════════╝
 """
 
-import uno
 import unohelper
+
+from com.sun.star.logging.LogLevel import SEVERE
 
 from com.sun.star.awt import XContainerWindowEventHandler
 
@@ -36,6 +37,10 @@ from com.sun.star.lang import XServiceInfo
 
 from jaybird import OptionsManager
 
+from jaybird import getLogger
+
+from jaybird import g_basename
+from jaybird import g_defaultlog
 from jaybird import g_identifier
 
 import traceback
@@ -51,6 +56,7 @@ class OptionsHandler(unohelper.Base,
     def __init__(self, ctx):
         self._ctx = ctx
         self._manager = None
+        self._logger = getLogger(ctx, g_defaultlog, g_basename)
 
     # XContainerWindowEventHandler
     def callHandlerMethod(self, window, event, method):
@@ -58,7 +64,7 @@ class OptionsHandler(unohelper.Base,
             handled = False
             if method == 'external_event':
                 if event == 'initialize':
-                    self._manager = OptionsManager(self._ctx, window)
+                    self._manager = OptionsManager(self._ctx, self._logger, window)
                     handled = True
                 elif event == 'ok':
                     self._manager.saveSetting()
@@ -68,7 +74,7 @@ class OptionsHandler(unohelper.Base,
                     handled = True
             return handled
         except Exception as e:
-            print("ERROR: %s - %s" % (e, traceback.format_exc()))
+            self._logger.logprb(SEVERE, 'OptionsHandler', 'callHandlerMethod', 301, e, traceback.format_exc())
 
     def getSupportedMethodNames(self):
         return ('external_event', )
@@ -80,7 +86,6 @@ class OptionsHandler(unohelper.Base,
         return g_ImplementationName
     def getSupportedServiceNames(self):
         return g_ImplementationHelper.getSupportedServiceNames(g_ImplementationName)
-
 
 g_ImplementationHelper.addImplementation(OptionsHandler,                  # UNO object class
                                          g_ImplementationName,            # Implementation name
