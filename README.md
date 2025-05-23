@@ -29,7 +29,7 @@
 
 **The use of this software subjects you to our [Terms Of Use][4].**
 
-# version [1.0.5][5]
+# version [1.1.0][5]
 
 ## Introduction:
 
@@ -129,7 +129,7 @@ ___
 Normally, the extension is created with Eclipse for Java and [LOEclipse][32]. To work around Eclipse, I modified LOEclipse to allow the extension to be created with Apache Ant.  
 To create the JaybirdOOo extension with the help of Apache Ant, you need to:
 - Install the [Java SDK][33] version 8 or higher.
-- Install [Apache Ant][34] version 1.9.1 or higher.
+- Install [Apache Ant][34] version 1.10.0 or higher.
 - Install [LibreOffice and its SDK][35] version 7.x or higher.
 - Clone the [JaybirdOOo][36] repository on GitHub into a folder.
 - From this folder, move to the directory: `source/JaybirdOOo/`
@@ -227,7 +227,7 @@ ___
 [20]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [21]: <img/JaybirdOOo.svg#middle>
 [22]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.0.5#right>
+[23]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.0#right>
 [24]: <img/JaybirdOOo-1.png>
 [25]: <img/JaybirdOOo-2.png>
 [26]: <img/JaybirdOOo-3.png>
