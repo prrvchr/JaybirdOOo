@@ -43,6 +43,8 @@ from jaybird import g_basename
 from jaybird import g_defaultlog
 from jaybird import g_identifier
 
+from jaybird import g_disabled
+
 import traceback
 
 # pythonloader looks for a static g_ImplementationHelper variable
@@ -64,7 +66,7 @@ class OptionsHandler(unohelper.Base,
             handled = False
             if method == 'external_event':
                 if event == 'initialize':
-                    self._manager = OptionsManager(self._ctx, self._logger, window)
+                    self._manager = OptionsManager(self._ctx, self._logger, window, g_disabled)
                     handled = True
                 elif event == 'ok':
                     self._manager.saveSetting()
