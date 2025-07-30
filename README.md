@@ -29,7 +29,7 @@
 
 **The use of this software subjects you to our [Terms Of Use][4].**
 
-# version [1.1.1][5]
+# version [1.1.2][5]
 
 ## Introduction:
 
@@ -208,9 +208,12 @@ ___
 - Changed the requirement to clearly state that the Firebird server must be installed in order for the JaybirdOoo extension to work. Unfortunately, I only just realized this late... :-(
 - Requires the **jdbcDriverOOo extension at least version 1.5.1**.
 
-### What remains to be done for version 1.1.1:
+### What has been done for version 1.1.2:
 
-- Add what is missing to get the extension working without having to install the Firebird server.
+- Firebird Server 5.0.3 binaries are now provided by the jdbcDriverOOo extension via the `JaybirdEmbedded.jar` archive for Windows and Linux in the 64-bit x86 architecture.
+- Requires the **jdbcDriverOOo extension at least version 1.5.4**.
+
+### What remains to be done for version 1.1.2:
 
 - Add new language for internationalization...
 
@@ -220,7 +223,7 @@ ___
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/README_fr>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_en>
-[5]: <https://prrvchr.github.io/JaybirdOOo#what-has-been-done-for-version-111>
+[5]: <https://prrvchr.github.io/JaybirdOOo#what-has-been-done-for-version-112>
 [6]: <https://prrvchr.github.io/>
 [7]: <https://www.libreoffice.org/download/download/>
 [8]: <https://www.openoffice.org/download/index.html>
@@ -240,7 +243,7 @@ ___
 [22]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [23]: <img/JaybirdOOo.svg#middle>
 [24]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[25]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.1#right>
+[25]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.2#right>
 [26]: <img/JaybirdOOo-1.png>
 [27]: <img/JaybirdOOo-2.png>
 [28]: <img/JaybirdOOo-3.png>
