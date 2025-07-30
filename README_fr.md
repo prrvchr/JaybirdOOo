@@ -29,7 +29,7 @@
 
 **L'utilisation de ce logiciel vous soumet à nos [Conditions d'utilisation][4].**
 
-# version [1.1.1][5]
+# version [1.1.2][5]
 
 ## Introduction:
 
@@ -208,9 +208,12 @@ ___
 - Modification des prérequis pour indiquer clairement que le serveur Firebird doit être installé pour que l'extension JaybirdOoo fonctionne. Malheureusement, je ne m'en suis rendu compte que tardivement... :-(
 - Nécessite l'extension **jdbcDriverOOo en version 1.5.1 minimum**.
 
-### Que reste-t-il à faire pour la version 1.1.1:
+### Ce qui a été fait pour la version 1.1.2:
 
-- Ajouter ce qu'il manque afin d'arriver à faire fonctioner l'extension sans devoir installer le serveur Firebird.
+- Les binaires du Serveur Firebird 5.0.3 sont désormais fournis par l'extension jdbcDriverOOo via l'archive `JaybirdEmbedded.jar` pour Windows et Linux dans l'architecture x86 64 bits.
+- Nécessite l'extension **jdbcDriverOOo en version 1.5.4 minimum**.
+
+### Que reste-t-il à faire pour la version 1.1.2:
 
 - Ajouter de nouvelles langue pour l'internationalisation...
 
@@ -220,7 +223,7 @@ ___
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_fr>
-[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-111>
+[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-112>
 [6]: <https://prrvchr.github.io/README_fr>
 [7]: <https://fr.libreoffice.org/download/telecharger-libreoffice/>
 [8]: <https://www.openoffice.org/fr/Telecharger/>
@@ -240,7 +243,7 @@ ___
 [22]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
 [23]: <img/JaybirdOOo.svg#middle>
 [24]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[25]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.1#right>
+[25]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.2#right>
 [26]: <img/JaybirdOOo-1_fr.png>
 [27]: <img/JaybirdOOo-2_fr.png>
 [28]: <img/JaybirdOOo-3_fr.png>
