@@ -29,7 +29,7 @@
 
 **L'utilisation de ce logiciel vous soumet à nos [Conditions d'utilisation][4].**
 
-# version [1.1.2][5]
+# version [1.2.0][5]
 
 ## Introduction:
 
@@ -42,6 +42,7 @@ Etant un logiciel libre je vous encourage:
 - A dupliquer son [code source][12].
 - A apporter des modifications, des corrections, des améliorations.
 - D'ouvrir un [dysfonctionnement][13] si nécessaire.
+- De [participer au frais][14] de la [certification CASA][15].
 
 Bref, à participer au developpement de cette extension.  
 Car c'est ensemble que nous pouvons rendre le Logiciel Libre plus intelligent.
@@ -51,13 +52,13 @@ ___
 ## Prérequis:
 
 L'extension JaybirdOOo utilise l'extension jdbcDriverOOo pour fonctionner.  
-Elle doit donc répondre aux [prérequis de l'extension jdbcDriverOOo][14].  
+Elle doit donc répondre aux [prérequis de l'extension jdbcDriverOOo][16].  
 Elle nécessite que l'extension jdbcDriverOOo soit configurée pour charger les pilotes JDBC dans le ClassPath de Java comme c'est le cas par défaut.
 
-Le pilote Java sous jacent [Jaybird][15] utilise pour son fonctionnement en mode intégré l'archive Java [JaybirdEmbedded][16] qui permet d'émuler la présence d'un [Serveur Firebird 5.0.3][17] pour les architectures Windows et Linux en x86 64 bits.  
-Pour toutes autres architectures vous devez installer le [Serveur Firebird 5.x][17] correspondant à votre architecture.
+Le pilote Java sous jacent [Jaybird][17] utilise pour son fonctionnement en mode intégré l'archive Java [JaybirdEmbedded][18] qui permet d'émuler la présence d'un [Serveur Firebird 5.0.3][19] pour les architectures Windows et Linux en x86 64 bits.  
+Pour toutes autres architectures vous devez installer le [Serveur Firebird 5.x][19] correspondant à votre architecture.
 
-De plus, en raison du [dysfonctionnement #156471][18] et suivant le [PR#154989][19], l'extension JaybirdOOo nécessite **LibreOffice version 24.2.x** minimum pour fonctionner.
+De plus, en raison du [dysfonctionnement #156471][20] et suivant le [PR#154989][21], l'extension JaybirdOOo nécessite **LibreOffice version 24.2.x** minimum pour fonctionner.
 
 ___
 
@@ -66,11 +67,11 @@ ___
 Il semble important que le fichier n'ait pas été renommé lors de son téléchargement.  
 Si nécessaire, renommez-le avant de l'installer.
 
-- [![jdbcDriverOOo logo][20]][21] Installer l'extension **[jdbcDriverOOo.oxt][22]** [![Version][23]][22]
+- [![jdbcDriverOOo logo][22]][23] Installer l'extension **[jdbcDriverOOo.oxt][24]** [![Version][25]][24]
 
     Cette extension est nécessaire pour utiliser Firebird avec toutes ses fonctionnalités.
 
-- ![JaybirdOOo logo][24] Installer l'extension **[JaybirdOOo.oxt][25]** [![Version][26]][25]
+- ![JaybirdOOo logo][26] Installer l'extension **[JaybirdOOo.oxt][27]** [![Version][28]][27]
 
 Redémarrez LibreOffice après l'installation.  
 **Attention, redémarrer LibreOffice peut ne pas suffire.**
@@ -90,20 +91,20 @@ ___
 
 Dans LibreOffice / OpenOffice aller à: Fichier -> Nouveau -> Base de données...:
 
-![JaybirdOOo screenshot 1][27]
+![JaybirdOOo screenshot 1][29]
 
 A l'étape: Sélectionner une base de données:
 - selectionner: Créer une nouvelle base de données
 - Dans: Base de données intégrée: choisir: **Pilote Jaybird intégré**
 - cliquer sur le bouton: Suivant
 
-![JaybirdOOo screenshot 2][28]
+![JaybirdOOo screenshot 2][30]
 
 A l'étape: Enregistrer et continuer:
 - ajuster les paramètres selon vos besoins...
 - cliquer sur le bouton: Terminer
 
-![JaybirdOOo screenshot 3][29]
+![JaybirdOOo screenshot 3][31]
 
 Maintenant à vous d'en profiter...
 
@@ -111,17 +112,17 @@ ___
 
 ## Comment ça marche:
 
-JaybirdOOo est un service [com.sun.star.sdbc.Driver][30] UNO écrit en Python.  
-Il s'agit d'une surcouche à l'extension [jdbcDriverOOo][21] permettant de stocker la base de données Firebird dans un fichier odb (qui est, en fait, un fichier compressé).
+JaybirdOOo est un service [com.sun.star.sdbc.Driver][32] UNO écrit en Python.  
+Il s'agit d'une surcouche à l'extension [jdbcDriverOOo][23] permettant de stocker la base de données Firebird dans un fichier odb (qui est, en fait, un fichier compressé).
 
 Son fonctionnement est assez basique, à savoir:
 
 - Lors d'une demande de connexion, plusieurs choses sont faites:
   - S'il n'existe pas déjà, un **sous-répertoire** avec le nom: `.` + `nom_du_fichier_odb` + `.lck` est créé à l'emplacement du fichier odb dans lequel tous les fichiers Firebird sont extraits du répertoire **database** du fichier odb (décompression).
-  - L'extension [jdbcDriverOOo][21] est utilisée pour obtenir l'interface [com.sun.star.sdbc.XConnection][31] à partir du chemin du **sous-répertoire** + `/jaybird`.
-  - Si la connexion réussi, un [DocumentHandler][32] est ajouté en tant que [com.sun.star.util.XCloseListener][33] et [com.sun.star.document.XStorageChangeListener][34] au fichier odb.
+  - L'extension [jdbcDriverOOo][23] est utilisée pour obtenir l'interface [com.sun.star.sdbc.XConnection][33] à partir du chemin du **sous-répertoire** + `/jaybird`.
+  - Si la connexion réussi, un [DocumentHandler][34] est ajouté en tant que [com.sun.star.util.XCloseListener][35] et [com.sun.star.document.XStorageChangeListener][36] au fichier odb.
   - Si la connexion échoue et que les fichiers ont été extraits lors de la phase 1, le **sous-répertoire** est supprimé.
-- Lors de la fermeture ou du changement de nom (Enregistrer sous) du fichier odb, si la connexion a réussi, le [DocumentHandler][32] copie tous les fichiers présents dans le **sous-répertoire** dans le (nouveau) répertoire **database** du fichier odb (zip), puis supprime le **sous-répertoire**.
+- Lors de la fermeture ou du changement de nom (Enregistrer sous) du fichier odb, si la connexion a réussi, le [DocumentHandler][34] copie tous les fichiers présents dans le **sous-répertoire** dans le (nouveau) répertoire **database** du fichier odb (zip), puis supprime le **sous-répertoire**.
 
 Le but principal de ce mode de fonctionnement est de profiter des caractéristiques ACID de la base de données sous-jacente en cas de fermeture anormale de LibreOffice.
 En contre partie, la fonction: **fichier -> Sauvegarder** n'a **aucun effet sur la base de données sous jacente**. Seul la fermeture du fichier odb ou son enregistrement sous un nom different (Fichier -> Enregistrer sous) effectura la sauvegarde de la base de donnée dans le fichier odb.
@@ -130,12 +131,12 @@ ___
 
 ## Comment créer l'extension:
 
-Normalement, l'extension est créée avec Eclipse pour Java et [LOEclipse][35]. Pour contourner Eclipse, j'ai modifié LOEclipse afin de permettre la création de l'extension avec Apache Ant.  
+Normalement, l'extension est créée avec Eclipse pour Java et [LOEclipse][37]. Pour contourner Eclipse, j'ai modifié LOEclipse afin de permettre la création de l'extension avec Apache Ant.  
 Pour créer l'extension JaybirdOOo avec l'aide d'Apache Ant, vous devez:
-- Installer le [SDK Java][36] version 8 ou supérieure.
-- Installer [Apache Ant][37] version 1.10.0 ou supérieure.
-- Installer [LibreOffice et son SDK][38] version 7.x ou supérieure.
-- Cloner le dépôt [JaybirdOOo][39] sur GitHub dans un dossier.
+- Installer le [SDK Java][38] version 8 ou supérieure.
+- Installer [Apache Ant][39] version 1.10.0 ou supérieure.
+- Installer [LibreOffice et son SDK][40] version 7.x ou supérieure.
+- Cloner le dépôt [JaybirdOOo][41] sur GitHub dans un dossier.
 - Depuis ce dossier, accédez au répertoire: `source/JaybirdOOo/`
 - Dans ce répertoire, modifiez le fichier `build.properties` afin que les propriétés `office.install.dir` et `sdk.dir` pointent vers les dossiers d'installation de LibreOffice et de son SDK, respectivement.
 - Lancez la création de l'archive avec la commande: `ant`
@@ -161,8 +162,8 @@ ___
 
 ### Ce qui a été fait pour la version 1.0.0:
 
-- Tout d'abord je tiens à remercier [rotteveel][40] pour [l'amélioration #629][41] qui a permis de publier cette extension.
-- Cette extension est basée sur la [correction #154989][19] disponible depuis LibreOffice 24.2.x. Elle peut donc fonctionner avec les autres extensions proposant des services de bases de données intégrées.
+- Tout d'abord je tiens à remercier [rotteveel][42] pour [l'amélioration #629][43] qui a permis de publier cette extension.
+- Cette extension est basée sur la [correction #154989][21] disponible depuis LibreOffice 24.2.x. Elle peut donc fonctionner avec les autres extensions proposant des services de bases de données intégrées.
 - JaybirdOOo nécessite **LibreOffice 24.2.x** et **Java 17** au minimum. Il se chargera pour l'url: `sdbc:embedded:jaybird`.
 
 ### Ce qui a été fait pour la version 1.0.1:
@@ -172,13 +173,13 @@ ___
 
 ### Ce qui a été fait pour la version 1.0.2:
 
-- Mise à jour du paquet [Python packaging][42] vers la version 24.1.
-- Mise à jour du paquet [Python setuptools][43] vers la version 72.1.0.
+- Mise à jour du paquet [Python packaging][44] vers la version 24.1.
+- Mise à jour du paquet [Python setuptools][45] vers la version 72.1.0.
 - L'extension vous demandera d'installer l'extensions jdbcDriverOOo en version 1.4.2 minimum.
 
 ### Ce qui a été fait pour la version 1.0.3:
 
-- Mise à jour du paquet [Python setuptools][43] vers la version 73.0.1.
+- Mise à jour du paquet [Python setuptools][45] vers la version 73.0.1.
 - La journalisation accessible dans les options de l’extension s’affiche désormais correctement sous Windows.
 - Les options de l'extension sont désormais accessibles via: **Outils -> Options... -> LibreOffice Base -> Pilote Jaybird intégré**
 - Les modifications apportées aux options de l'extension, qui nécessitent un redémarrage de LibreOffice, entraîneront l'affichage d'un message.
@@ -197,9 +198,9 @@ ___
 
 ### Ce qui a été fait pour la version 1.1.0:
 
-- Déploiement de l'enregistrement passif permettant une installation beaucoup plus rapide des extensions et de différencier les services UNO enregistrés de ceux fournis par une implémentation Java ou Python. Cet enregistrement passif est assuré par l'extension [LOEclipse][35] via les [PR#152][44] et [PR#157][45].
-- Modification de [LOEclipse][35] pour prendre en charge le nouveau format de fichier `rdb` produit par l'utilitaire de compilation `unoidl-write`. Les fichiers `idl` ont été mis à jour pour prendre en charge les deux outils de compilation disponibles: idlc et unoidl-write.
-- Il est désormais possible de créer le fichier oxt de l'extension JaybirdOOo uniquement avec Apache Ant et une copie du dépôt GitHub. La section [Comment créer l'extension][46] a été ajoutée à la documentation.
+- Déploiement de l'enregistrement passif permettant une installation beaucoup plus rapide des extensions et de différencier les services UNO enregistrés de ceux fournis par une implémentation Java ou Python. Cet enregistrement passif est assuré par l'extension [LOEclipse][37] via les [PR#152][46] et [PR#157][47].
+- Modification de [LOEclipse][37] pour prendre en charge le nouveau format de fichier `rdb` produit par l'utilitaire de compilation `unoidl-write`. Les fichiers `idl` ont été mis à jour pour prendre en charge les deux outils de compilation disponibles: idlc et unoidl-write.
+- Il est désormais possible de créer le fichier oxt de l'extension JaybirdOOo uniquement avec Apache Ant et une copie du dépôt GitHub. La section [Comment créer l'extension][48] a été ajoutée à la documentation.
 - Toute erreur survenant lors du chargement du pilote sera consignée dans le journal de l'extension si la journalisation a été préalablement activé. Cela facilite l'identification des problèmes d'installation sous Windows.
 - Nécessite l'extension **jdbcDriverOOo en version 1.5.0 minimum**.
 
@@ -214,7 +215,17 @@ ___
 - Les binaires du Serveur Firebird 5.0.3 sont désormais fournis par l'extension jdbcDriverOOo via l'archive `JaybirdEmbedded.jar` pour Windows et Linux dans l'architecture x86 64 bits.
 - Nécessite l'extension **jdbcDriverOOo en version 1.5.4 minimum**.
 
-### Que reste-t-il à faire pour la version 1.1.2:
+### Ce qui a été fait pour la version 1.1.3:
+
+- Nécessite l'extension **jdbcDriverOOo en version 1.5.7 minimum**.
+
+### Ce qui a été fait pour la version 1.2.0:
+
+- Si l'extension jdbcDriverOOo fonctionne sans l'instrumentation Java, un message d'avertissement s'affichera dans les options de l'extension.
+- Nécessite l'extension **jdbcDriverOOo en version 1.6.1 minimum**.
+- A été testé sous LibreOfficeDev 26.2.
+
+### Que reste-t-il à faire pour la version 1.2.0:
 
 - Ajouter de nouvelles langue pour l'internationalisation...
 
@@ -224,7 +235,7 @@ ___
 [2]: <https://prrvchr.github.io/JaybirdOOo/>
 [3]: <https://prrvchr.github.io/JaybirdOOo/>
 [4]: <https://prrvchr.github.io/JaybirdOOo/source/JaybirdOOo/registration/TermsOfUse_fr>
-[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-112>
+[5]: <https://prrvchr.github.io/JaybirdOOo/README_fr#ce-qui-a-%C3%A9t%C3%A9-fait-pour-la-version-120>
 [6]: <https://prrvchr.github.io/README_fr>
 [7]: <https://fr.libreoffice.org/download/telecharger-libreoffice/>
 [8]: <https://www.openoffice.org/fr/Telecharger/>
@@ -233,36 +244,38 @@ ___
 [11]: <https://firebirdsql.org/file/documentation/papers_presentations/html/fr/paper-fbent-acid-fr.html>
 [12]: <https://github.com/prrvchr/JaybirdOOo/>
 [13]: <https://github.com/prrvchr/JaybirdOOo/issues/new>
-[14]: <https://prrvchr.github.io/jdbcDriverOOo/#requirement>
-[15]: <https://github.com/FirebirdSQL/jaybird>
-[16]: <https://prrvchr.github.io/JaybirdEmbedded/README_fr>
-[17]: <https://firebirdsql.org/en/firebird-5-0-3>
-[18]: <https://bugs.documentfoundation.org/show_bug.cgi?id=156471>
-[19]: <https://gerrit.libreoffice.org/c/core/+/154989>
-[20]: <https://prrvchr.github.io/jdbcDriverOOo/img/jdbcDriverOOo.svg#middle>
-[21]: <https://prrvchr.github.io/jdbcDriverOOo/README_fr>
-[22]: <https://github.com/prrvchr/jdbcDriverOOo/releases/latest/download/jdbcDriverOOo.oxt>
-[23]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
-[24]: <img/JaybirdOOo.svg#middle>
-[25]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
-[26]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.1.2#right>
-[27]: <img/JaybirdOOo-1_fr.png>
-[28]: <img/JaybirdOOo-2_fr.png>
-[29]: <img/JaybirdOOo-3_fr.png>
-[30]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/sdbc/Driver.html>
-[31]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/sdbc/XConnection.html>
-[32]: <https://github.com/prrvchr/JaybirdOOo/blob/main/uno/lib/uno/embedded/documenthandler.py>
-[33]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/util/XCloseListener.html>
-[34]: <http://www.openoffice.org/api/docs/common/ref/com/sun/star/document/XStorageChangeListener.html>
-[35]: <https://github.com/LibreOffice/loeclipse>
-[36]: <https://adoptium.net/temurin/releases/?version=8&package=jdk>
-[37]: <https://ant.apache.org/manual/install.html>
-[38]: <https://downloadarchive.documentfoundation.org/libreoffice/old/7.6.7.2/>
-[39]: <https://github.com/prrvchr/JaybirdOOo.git>
-[40]: <https://github.com/mrotteveel>
-[41]: <https://github.com/FirebirdSQL/jaybird/issues/629>
-[42]: <https://pypi.org/project/packaging/>
-[43]: <https://pypi.org/project/setuptools/>
-[44]: <https://github.com/LibreOffice/loeclipse/pull/152>
-[45]: <https://github.com/LibreOffice/loeclipse/pull/157>
-[46]: <https://prrvchr.github.io/JaybirdOOo/README_fr#comment-cr%C3%A9er-lextension>
+[14]: <https://github.com/sponsors/prrvchr>
+[15]: <https://appdefensealliance.dev/casa>
+[16]: <https://prrvchr.github.io/jdbcDriverOOo/#requirement>
+[17]: <https://github.com/FirebirdSQL/jaybird>
+[18]: <https://prrvchr.github.io/JaybirdEmbedded/README_fr>
+[19]: <https://firebirdsql.org/en/firebird-5-0-3>
+[20]: <https://bugs.documentfoundation.org/show_bug.cgi?id=156471>
+[21]: <https://gerrit.libreoffice.org/c/core/+/154989>
+[22]: <https://prrvchr.github.io/jdbcDriverOOo/img/jdbcDriverOOo.svg#middle>
+[23]: <https://prrvchr.github.io/jdbcDriverOOo/README_fr>
+[24]: <https://github.com/prrvchr/jdbcDriverOOo/releases/latest/download/jdbcDriverOOo.oxt>
+[25]: <https://img.shields.io/github/v/tag/prrvchr/jdbcDriverOOo?label=latest#right>
+[26]: <img/JaybirdOOo.svg#middle>
+[27]: <https://github.com/prrvchr/JaybirdOOo/releases/latest/download/JaybirdOOo.oxt>
+[28]: <https://img.shields.io/github/downloads/prrvchr/JaybirdOOo/latest/total?label=v1.2.0#right>
+[29]: <img/JaybirdOOo-1_fr.png>
+[30]: <img/JaybirdOOo-2_fr.png>
+[31]: <img/JaybirdOOo-3_fr.png>
+[32]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/sdbc/Driver.html>
+[33]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/sdbc/XConnection.html>
+[34]: <https://github.com/prrvchr/JaybirdOOo/blob/main/uno/lib/uno/embedded/documenthandler.py>
+[35]: <https://www.openoffice.org/api/docs/common/ref/com/sun/star/util/XCloseListener.html>
+[36]: <http://www.openoffice.org/api/docs/common/ref/com/sun/star/document/XStorageChangeListener.html>
+[37]: <https://github.com/LibreOffice/loeclipse>
+[38]: <https://adoptium.net/temurin/releases/?version=8&package=jdk>
+[39]: <https://ant.apache.org/manual/install.html>
+[40]: <https://downloadarchive.documentfoundation.org/libreoffice/old/7.6.7.2/>
+[41]: <https://github.com/prrvchr/JaybirdOOo.git>
+[42]: <https://github.com/mrotteveel>
+[43]: <https://github.com/FirebirdSQL/jaybird/issues/629>
+[44]: <https://pypi.org/project/packaging/>
+[45]: <https://pypi.org/project/setuptools/>
+[46]: <https://github.com/LibreOffice/loeclipse/pull/152>
+[47]: <https://github.com/LibreOffice/loeclipse/pull/157>
+[48]: <https://prrvchr.github.io/JaybirdOOo/README_fr#comment-cr%C3%A9er-lextension>
