@@ -1,5 +1,5 @@
 #!
-# -*- coding: utf_8 -*-
+# -*- coding: utf-8 -*-
 
 """
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -39,7 +39,7 @@ g_defaultlog = '%sLogger' % g_dbname
 g_errorlog = '%sError' % g_dbname
 
 # DataBase configuration
-g_protocol = 'xdbc:firebird:embedded:'
+g_protocol = 'juda:firebird:embedded:'
 g_url = 'sdbc:embedded:jaybird'
 g_user = 'admin'
 g_options = ''
@@ -49,10 +49,10 @@ g_path = True;
 g_driver = ''
 g_shutdown = ''
 
-g_disabled = ()
 g_memory = None
 
-# LibreOffice configuration
-g_lover = '24.2'
+# Setup frame and Job name
+g_setup = '%s.Setup' % g_extension
 
-
+class State:
+    restart = False

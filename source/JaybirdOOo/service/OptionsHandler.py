@@ -1,5 +1,5 @@
 #!
-# -*- coding: utf_8 -*-
+# -*- coding: utf-8 -*-
 
 """
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -41,9 +41,6 @@ from jaybird import getLogger
 
 from jaybird import g_basename
 from jaybird import g_defaultlog
-from jaybird import g_identifier
-
-from jaybird import g_disabled
 
 import traceback
 
@@ -51,6 +48,7 @@ import traceback
 g_ImplementationHelper = unohelper.ImplementationHelper()
 g_ImplementationName = 'io.github.prrvchr.JaybirdOOo.OptionsHandler'
 g_ServiceNames = ("io.github.prrvchr.JaybirdOOo.OptionsHandler", )
+
 
 class OptionsHandler(unohelper.Base,
                      XServiceInfo,
@@ -66,7 +64,7 @@ class OptionsHandler(unohelper.Base,
             handled = False
             if method == 'external_event':
                 if event == 'initialize':
-                    self._manager = OptionsManager(self._ctx, self._logger, window, g_disabled)
+                    self._manager = OptionsManager(self._ctx, self._logger, window)
                     handled = True
                 elif event == 'ok':
                     self._manager.saveSetting()
@@ -74,13 +72,17 @@ class OptionsHandler(unohelper.Base,
                 elif event == 'back':
                     self._manager.loadSetting()
                     handled = True
+            elif method == 'ShowSetup':
+                self._manager.showSetup()
+                handled = True
             return handled
         except Exception as e:
             print("OptionsHandler.callHandlerMethod() ERROR: %s" % traceback.format_exc())
             self._logger.logprb(SEVERE, 'OptionsHandler', 'callHandlerMethod', 301, e, traceback.format_exc())
 
     def getSupportedMethodNames(self):
-        return ('external_event', )
+        return ('external_event',
+                'ShowSetup')
 
     # XServiceInfo
     def supportsService(self, service):
@@ -89,6 +91,7 @@ class OptionsHandler(unohelper.Base,
         return g_ImplementationName
     def getSupportedServiceNames(self):
         return g_ImplementationHelper.getSupportedServiceNames(g_ImplementationName)
+
 
 g_ImplementationHelper.addImplementation(OptionsHandler,                  # UNO object class
                                          g_ImplementationName,            # Implementation name
