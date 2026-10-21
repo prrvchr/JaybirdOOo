@@ -1,5 +1,5 @@
 #!
-# -*- coding: utf_8 -*-
+# -*- coding: utf-8 -*-
 
 """
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -30,29 +30,24 @@
 # General configuration
 g_catalog = 'jaybird'
 g_dbname = 'Jaybird'
-g_extension = '%sOOo' % g_dbname
-g_identifier = 'io.github.prrvchr.%s' % g_extension
-g_service = '%s.Driver' % g_identifier
-g_resource = 'resource'
+g_extension = f'{g_dbname}OOo'
+g_identifier = f'io.github.prrvchr.{g_extension}'
+g_service = f'{g_identifier}.Driver'
+g_defaultlog = f'{g_dbname}Logger'
+g_errorlog = f'{g_dbname}Error'
 g_basename = 'Driver'
-g_defaultlog = '%sLogger' % g_dbname
-g_errorlog = '%sError' % g_dbname
 
 # DataBase configuration
-g_protocol = 'xdbc:firebird:embedded:'
+g_protocol = 'juda:firebird:embedded:'
 g_url = 'sdbc:embedded:jaybird'
 g_user = 'admin'
 g_options = ''
 g_create = '?createDatabaseIfNotExist=true'
 g_exist = ''
-g_path = True;
+g_path = True
 g_driver = ''
 g_shutdown = ''
 
-g_disabled = ()
 g_memory = None
 
-# LibreOffice configuration
-g_lover = '24.2'
-
-
+g_version = '1.3.0'

@@ -1,5 +1,5 @@
 #!
-# -*- coding: utf_8 -*-
+# -*- coding: utf-8 -*-
 
 """
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -35,15 +35,12 @@ from com.sun.star.awt import XContainerWindowEventHandler
 
 from com.sun.star.lang import XServiceInfo
 
-from jaybird import OptionsManager
+from jaybird.options.optionsmanager import OptionsManager
 
-from jaybird import getLogger
+from jaybird.logger.helper import getLogger
 
-from jaybird import g_basename
-from jaybird import g_defaultlog
-from jaybird import g_identifier
-
-from jaybird import g_disabled
+from jaybird.configuration import g_basename
+from jaybird.configuration import g_defaultlog
 
 import traceback
 
@@ -51,6 +48,7 @@ import traceback
 g_ImplementationHelper = unohelper.ImplementationHelper()
 g_ImplementationName = 'io.github.prrvchr.JaybirdOOo.OptionsHandler'
 g_ServiceNames = ("io.github.prrvchr.JaybirdOOo.OptionsHandler", )
+
 
 class OptionsHandler(unohelper.Base,
                      XServiceInfo,
@@ -66,7 +64,7 @@ class OptionsHandler(unohelper.Base,
             handled = False
             if method == 'external_event':
                 if event == 'initialize':
-                    self._manager = OptionsManager(self._ctx, self._logger, window, g_disabled)
+                    self._manager = OptionsManager(self._ctx, window, self._logger)
                     handled = True
                 elif event == 'ok':
                     self._manager.saveSetting()
@@ -85,10 +83,13 @@ class OptionsHandler(unohelper.Base,
     # XServiceInfo
     def supportsService(self, service):
         return g_ImplementationHelper.supportsService(g_ImplementationName, service)
+
     def getImplementationName(self):
         return g_ImplementationName
+
     def getSupportedServiceNames(self):
         return g_ImplementationHelper.getSupportedServiceNames(g_ImplementationName)
+
 
 g_ImplementationHelper.addImplementation(OptionsHandler,                  # UNO object class
                                          g_ImplementationName,            # Implementation name
